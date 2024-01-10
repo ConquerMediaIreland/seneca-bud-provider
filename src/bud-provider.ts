@@ -434,6 +434,9 @@ function BudProvider(this: any, options: FullBudProviderOptions) {
       'X-Customer-Secret': spec.customersecret
     })
 
+    console.log('RECONNECT56')
+    console.log((mode === 'reconnect')?'reconfirm_consent':undefined)
+
     let body = {
       redirect_url: spec.redirect_url,
       initial_screen: (mode === 'reconnect')?'reconfirm_consent':undefined
