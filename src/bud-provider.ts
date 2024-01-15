@@ -439,7 +439,8 @@ function BudProvider(this: any, options: FullBudProviderOptions) {
 
     let body = {
       redirect_url: spec.redirect_url,
-      initial_screen: (mode === 'reconnect')?'reconfirm_consent':undefined
+      initial_screen: (mode === 'reconnect')?'reconfirm_consent':undefined,
+      reconfirm_consent_redirect: (mode === 'reconnect')?true:undefined
     }
     let res = post(makeUrl('v2/open-banking/authorisation-gateway-url'), {
       headers,
